@@ -117,10 +117,10 @@ Commercial support is available at
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My App</title>
+    <title>${APP_NAME}</title>
 </head>
 <body>
-    <h1>{{APP_MESSAGE}}</h1>
+    <h1>${APP_MESSAGE}</h1>
 </body>
 </html>
 ```
