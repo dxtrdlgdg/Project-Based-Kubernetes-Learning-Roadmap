@@ -24,7 +24,7 @@
 
 ### Create a Cluster for Phase 1
 ```
-k3d clusted create phase1
+k3d cluster create phase1
 ```
 ### Create Manifest files 
 * deployment.yaml
@@ -61,6 +61,7 @@ kubectl get ingress
 NAME             CLASS     HOSTS          ADDRESS      PORTS   AGE
 phase1-ingress   traefik   phase1.local   172.18.0.2   80      3m38s
 ```
+### Expose and access apps externally
 ```
 kubectl port-forward pod/phase1-7bb657c489-6hb4j 8080:80
 ```
