@@ -25,32 +25,6 @@
 
 ---
 
-## 🧩 PHASE 1 – Core Kubernetes Fundamentals (Week 1–2)
-**🎯 Goal:** Understand Pods, Deployments, and Services — the foundation of Kubernetes.
-
-### 🧱 Project: Static NGINX Web App
-- [ ] Create a Deployment for NGINX with 2 replicas  
-- [ ] Expose it using a NodePort Service  
-- [ ] Mount a ConfigMap for custom `index.html`  
-- [ ] Inspect Pods with `kubectl get/describe/logs/exec`  
-
-### 🧰 Tools
-- Minikube or k3d  
-- kubectl  
-- Lens (optional GUI)
-
-### 📘 Resources
-- [Kubernetes Concepts](https://kubernetes.io/docs/concepts/)
-- [Katacoda Labs](https://www.katacoda.com/courses/kubernetes)
-- [TechWorld with Nana – K8s Basics](https://www.youtube.com/watch?v=X48VuDVv0do)
-
-### ✅ Criteria
-- [ ] Deploy, scale, and delete apps via kubectl  
-- [ ] Expose and access apps externally  
-- [ ] Understand Pod, ReplicaSet, Deployment, Service differences  
-
----
-
 ## ⚙️ PHASE 2 – Multi-Service Application (Week 3–4)
 **🎯 Goal:** Learn multi-container setups, internal communication, and health probes.
 
