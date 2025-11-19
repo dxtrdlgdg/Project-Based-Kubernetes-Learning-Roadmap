@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phase1      # e.g., myapp
+spec:
+  replicas: 1            # number of pods
+  selector:
+    matchLabels:
+      app: phase1
+  template:
+    metadata:
+      labels:
+        app: phase1
+    spec:
+      containers:
+      - name: phase1
+        image: nginx:latest   # e.g., nginx:latest
+        ports:
+        - containerPort: 80  # e.g., 80

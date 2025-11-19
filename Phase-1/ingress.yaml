@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: phase1-ingress
+spec:
+  rules:
+  - host: phase1.local         # e.g., myapp.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: phase1
+            port:
+              number: 8080
