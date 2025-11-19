@@ -11,230 +11,33 @@
 ---
 
 ## 📋 Table of Contents
-- [Phase 1 – Core Fundamentals](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-1/Phase-1.md)
-- [Phase 2 – Multi-Service App](#-phase-2--multi-service-application-week-34)
-- [Phase 3 – Storage & Persistence](#-phase-3--storage-and-persistence-week-5)
-- [Phase 4 – Ingress & Networking](#-phase-4--ingress--networking-week-67)
-- [Phase 5 – CI/CD & GitOps](#-phase-5--cicd--gitops-week-89)
-- [Phase 6 – Monitoring & Logging](#-phase-6--monitoring--logging-week-1011)
-- [Phase 7 – Scaling & Reliability](#-phase-7--advanced-deployments--scaling-week-12)
-- [Phase 8 – Cloud & Multi-Env](#-phase-8--cloud-deployment--multi-environment-week-1314)
-- [Final Capstone Project](#-final-capstone-project-week-1516)
+- [Phase 1 – Core Fundamentals](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-1/Phase.md)
+- [Phase 2 – Multi-Service App](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-2/Phase.md)
+- [Phase 3 – Storage & Persistence](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-3/Phase.md)
+- [Phase 4 – Ingress & Networking](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-4/Phase.md)
+- [Phase 5 – CI/CD & GitOps](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-5/Phase.md)
+- [Phase 6 – Monitoring & Logging](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-6/Phase.md)
+- [Phase 7 – Scaling & Reliability](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-7/Phase.md)
+- [Phase 8 – Cloud & Multi-Env](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-8/Phase.md)
+- [Final Capstone Project](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Capstone/Phase.md)
 - [Learning Flow](#-suggested-learning-flow)
 - [Recommended Setup](#-recommended-setup)
 
 ---
 
-## ⚙️ PHASE 2 – Multi-Service Application (Week 3–4)
-**🎯 Goal:** Learn multi-container setups, internal communication, and health probes.
-
-### 🧱 Project: Guestbook App (Frontend + API + Redis)
-- [ ] Deploy frontend (React/NGINX)  
-- [ ] Deploy backend API (Flask/Node.js)  
-- [ ] Deploy Redis  
-- [ ] Use ConfigMaps, Secrets, liveness & readiness probes  
-
-### 🧰 Tools
-- Docker, kubectl, Minikube  
-- Sample: [GCP Guestbook App](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/tree/main/guestbook)
-
-### 📘 Resources
-- [ConfigMap Docs](https://kubernetes.io/docs/concepts/configuration/configmap/)
-- [Secret Docs](https://kubernetes.io/docs/concepts/configuration/secret/)
-
-### ✅ Criteria
-- [ ] Services communicate internally (backend ↔ Redis)  
-- [ ] Configurable environment variables  
-- [ ] Health probes working  
-
----
-
-## 💾 PHASE 3 – Storage and Persistence (Week 5)
-**🎯 Goal:** Persist data using PV, PVC, and StatefulSets.
-
-### 🧱 Project: WordPress + MySQL Stack
-- [ ] Create PV/PVC for MySQL  
-- [ ] Deploy MySQL StatefulSet  
-- [ ] Deploy WordPress linked to MySQL  
-- [ ] Expose via NodePort or Ingress  
-
-### 🧰 Tools
-- Minikube / k3s  
-- Helm  
-- kubectl  
-
-### 📘 Resources
-- [WordPress Helm Chart](https://artifacthub.io/packages/helm/bitnami/wordpress)
-- [Storage Concepts](https://kubernetes.io/docs/concepts/storage/)
-
-### ✅ Criteria
-- [ ] Data persists after pod restart  
-- [ ] StatefulSet and PVC bound  
-- [ ] Understand stateless vs stateful design  
-
----
-
-## 🌐 PHASE 4 – Ingress & Networking (Week 6–7)
-**🎯 Goal:** Control external access with ingress, routing, and TLS.
-
-### 🧱 Project: Multi-Service Routing
-- [ ] Install NGINX Ingress Controller (Helm)  
-- [ ] Deploy frontend & backend  
-- [ ] Create Ingress: `/` → frontend, `/api` → backend  
-- [ ] Add HTTPS with cert-manager  
-
-### 🧰 Tools
-- Helm  
-- Minikube / k3d  
-- cert-manager  
-
-### 📘 Resources
-- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
-- [cert-manager Docs](https://cert-manager.io/docs/)
-
-### ✅ Criteria
-- [ ] Accessible via local domain  
-- [ ] TLS certificate active  
-- [ ] Understand Ingress vs Service exposure  
-
----
-
-## ⚙️ PHASE 5 – CI/CD & GitOps (Week 8–9)
-**🎯 Goal:** Automate deployment and delivery.
-
-### 🧱 Project: Helm + GitHub Actions Pipeline
-- [ ] Package app using Helm  
-- [ ] Deploy via `helm install`  
-- [ ] Setup GitHub Actions:
-  - Build Docker image  
-  - Push to registry  
-  - Deploy via `kubectl` or `helm upgrade`  
-- [ ] (Optional) Setup ArgoCD  
-
-### 🧰 Tools
-- Helm  
-- GitHub Actions  
-- ArgoCD  
-
-### 📘 Resources
-- [Helm Docs](https://helm.sh/docs/)
-- [ArgoCD Guide](https://argo-cd.readthedocs.io/en/stable/getting_started/)
-
-### ✅ Criteria
-- [ ] Auto deployment on code push  
-- [ ] Multi-env Helm values  
-- [ ] Understand GitOps  
-
----
-
-## 📊 PHASE 6 – Monitoring & Logging (Week 10–11)
-**🎯 Goal:** Observe performance and collect logs.
-
-### 🧱 Project: Project Overwatch
-- [ ] Deploy Prometheus + Grafana  
-- [ ] Add app dashboards  
-- [ ] Deploy Loki for log aggregation  
-- [ ] Create alert rules  
-
-### 🧰 Tools
-- Prometheus Operator (Helm)  
-- Grafana  
-- Loki  
-
-### 📘 Resources
-- [Kube-Prometheus Stack](https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack)
-- [Grafana Loki Docs](https://grafana.com/docs/loki/latest/)
-
-### ✅ Criteria
-- [ ] Dashboards live  
-- [ ] Logs searchable  
-- [ ] Alerts trigger  
-
----
-
-## ⚖️ PHASE 7 – Advanced Deployments & Scaling (Week 12)
-**🎯 Goal:** Build resilient and scalable systems.
-
-### 🧱 Project: Scalable API System
-- [ ] Implement Horizontal Pod Autoscaler (HPA)  
-- [ ] Perform rolling updates  
-- [ ] Set CPU/memory limits  
-- [ ] Apply PodDisruptionBudget  
-
-### 🧰 Tools
-- kubectl  
-- Load testing (`hey`, `k6`)  
-
-### 📘 Resources
-- [HPA Docs](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
-- [Rolling Updates](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#rolling-updates)
-
-### ✅ Criteria
-- [ ] Auto-scaling verified  
-- [ ] Zero downtime deploys  
-- [ ] Resource quotas active  
-
----
-
-## ☁️ PHASE 8 – Cloud Deployment & Multi-Environment (Week 13–14)
-**🎯 Goal:** Run workloads in managed cloud K8s.
-
-### 🧱 Project: Multi-Env Cloud Deployment
-- [ ] Namespaces: dev, qa, prod  
-- [ ] Separate Helm values per env  
-- [ ] Deploy to EKS / GKE / AKS  
-- [ ] Manage secrets via Secrets Manager or SOPS  
-
-### 🧰 Tools
-- AWS CLI / gcloud / az  
-- Helm  
-- SOPS  
-
-### 📘 Resources
-- [EKS Workshop](https://www.eksworkshop.com/)
-- [External Secrets Operator](https://external-secrets.io/)
-- [Helm Values Files](https://helm.sh/docs/chart_template_guide/values_files/)
-
-### ✅ Criteria
-- [ ] Isolated namespaces per env  
-- [ ] Secure secrets management  
-- [ ] Cloud ingress & DNS working  
-
----
-
-## 🏁 FINAL CAPSTONE PROJECT (Week 15–16)
-**🎯 Goal:** Combine all phases into one production-grade system.
-
-### 💡 Project: Cloud-Native Microservice Platform
-**Includes:**
-- Frontend + API + DB  
-- Helm-based multi-env deployment  
-- Ingress + HTTPS  
-- Prometheus + Grafana + Loki  
-- GitHub Actions CI/CD  
-- Autoscaling + Persistent storage  
-
-### ✅ Criteria
-- [ ] Fully automated deployment pipeline  
-- [ ] Observable and scalable cluster  
-- [ ] Secure multi-env architecture  
-- [ ] Complete documentation + diagram  
-
----
-
 ## 🧭 Suggested Learning Flow
 
-| Phase | Topic | Duration | Output |
-|-------|--------|-----------|---------|
-| 1 | Core Concepts | 2 weeks | NGINX app |
-| 2 | Multi-Service | 2 weeks | Guestbook app |
-| 3 | Persistence | 1 week | Stateful app |
-| 4 | Ingress & TLS | 2 weeks | HTTPS routing |
-| 5 | CI/CD | 2 weeks | Auto deploy pipeline |
-| 6 | Monitoring | 2 weeks | Dashboards & logs |
-| 7 | Scaling | 1 week | HPA & limits |
-| 8 | Cloud Deployment | 2 weeks | EKS/GKE setup |
-| Capstone | Final Project | 2 weeks | Production-ready system |
+| Phase | Topic | Duration | Output | Status
+|-------|--------|-----------|---------|-----|
+| 1 | Core Concepts | 2 weeks | NGINX app | DONE|
+| 2 | Multi-Service | 2 weeks | Guestbook app | UNSTARTED |
+| 3 | Persistence | 1 week | Stateful app | UNSTARTED |
+| 4 | Ingress & TLS | 2 weeks | HTTPS routing | UNSTARTED |
+| 5 | CI/CD | 2 weeks | Auto deploy pipeline | UNSTARTED |
+| 6 | Monitoring | 2 weeks | Dashboards & logs | UNSTARTED |
+| 7 | Scaling | 1 week | HPA & limits | UNSTARTED |
+| 8 | Cloud Deployment | 2 weeks | EKS/GKE setup | UNSTARTED |
+| Capstone | Final Project | 2 weeks | Production-ready system | UNSTARTED |
 
 ---
 
