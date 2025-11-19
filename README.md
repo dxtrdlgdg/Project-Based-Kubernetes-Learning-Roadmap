@@ -11,7 +11,7 @@
 ---
 
 ## 📋 Table of Contents
-- [Phase 1 – Core Fundamentals](#-phase-1--core-kubernetes-fundamentals-week-12)
+- [Phase 1 – Core Fundamentals](https://github.com/dxtrdlgdg/Project-Based-Kubernetes-Learning-Roadmap/blob/master/Phase-1/Phase-1.md)
 - [Phase 2 – Multi-Service App](#-phase-2--multi-service-application-week-34)
 - [Phase 3 – Storage & Persistence](#-phase-3--storage-and-persistence-week-5)
 - [Phase 4 – Ingress & Networking](#-phase-4--ingress--networking-week-67)
