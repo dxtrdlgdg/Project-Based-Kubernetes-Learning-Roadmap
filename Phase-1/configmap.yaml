@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: phase1-config
 data:
-  PHASE: Phase1
+  APP_NAME: Phase 1
+  APP_MESSAGE: "Hello! this is Phase 1"

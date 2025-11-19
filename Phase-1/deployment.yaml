@@ -14,6 +14,18 @@ spec:
     spec:
       containers:
       - name: phase1
-        image: nginx:latest   # e.g., nginx:latest
+        imagePullPolicy: Never #This tells Kubernetes don’t try to pull from any registry, only use what exists locally inside the node.
+        image: phase1-configmap:latest   # e.g., nginx:latest
         ports:
         - containerPort: 80  # e.g., 80
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: phase1-config
+              key: APP_NAME
+        - name: APP_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: phase1-config
+              key: APP_MESSAGE

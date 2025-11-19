@@ -8,4 +8,4 @@ spec:
     app: phase1
   ports:
   - port: 8080         # exposed port
-    targetPort: 8080   # port on container
+    targetPort: 80   # port on container
